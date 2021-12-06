@@ -14,7 +14,7 @@ The purpose is to write a VBA script that shows the total volume of stocks per t
 
 ### Analysis
 
-Using the previously written code, steps were made to make the script more effecient reducing the run time. Copying over the original code, edits were made to the index. Below is the code used. 
+Using the previously written code, steps were made to make the script more effecient reducing the run time. Copying over the original code, edits were made to the index and removing nested loops. Below is the code used. 
 
 '1a) Create a ticker Index
     
@@ -69,14 +69,16 @@ Using the previously written code, steps were made to make the script more effec
         Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
     Next i
 
-Once the code was ran it properly displayed the tickers, total volume, as well as their return in the years of 2017 and 2018 respectively. Because the code was refactored and became more effecient the running time for the code was greatly reduced
+Once the code was ran it properly displayed the tickers, total volume, as well as their return in the years of 2017 and 2018 respectively. Because the code was refactored and became more effecient the running time for the code was greatly reduced. 
+
+![Chart](https://raw.githubusercontent.com/Drakeblaze10/stock-analysis/main/Resources/VBA_Challenge_2017.PNG)
+![Chart](https://raw.githubusercontent.com/Drakeblaze10/stock-analysis/main/Resources/VBA_Challenge_2018.PNG)
 
 ## Summary
 
 ### Pros and Cons of Using Refactoring Code
+**Pros:** Nested loops are removed, allowing the code to loop once. This greatly reduces the run time. Previously the code would take aproximately 0.8 seconds to the now 0.1 seconds. Lines of code are more readable with less repeating code creating cleaner script.
 
+**Cons:** Creating more efficient code allows the introduction of more errors, requiring more time for debugging. Another potential advantage may fall when more tickers are added. Creating, for example, a list of 1000 tickers may be arduous, and there may need an easer way to write it all down. 
 
-
-### Refactoring Code vs Original
-
-
+The benefit that refactoring Code has over nonrefactored is the speed and efficiency of the script. Some may enjoy seeing more individual lines of code written out, breaking down each step. However, with refractoring lines of code can be written more concisely.
